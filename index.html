@@ -26,10 +26,8 @@
       data-domain="amaan-developer.tiiny.site"
       src="https://analytics.tiiny.site/js/plausible.js"
     ></script>
-    <script
-      type="text/javascript"
-      src="https://tiiny.host/ad-script.js"
-    ></script>
+    <!-- Remove the ad-script.js script to get rid of the banner -->
+    <!-- <script type="text/javascript" src="https://tiiny.host/ad-script.js"></script> -->
   </head>
   <body>
     <header>
@@ -249,69 +247,56 @@
     <section id="contact" data-aos="fade-up" data-aos-delay="400">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contactForm" onsubmit="sendMail(event)">
+        <form id="contact-form">
           <input
             type="text"
+            id="name"
             name="name"
             placeholder="Your Name"
             required
-            data-aos="fade-up"
-            data-aos-delay="100"
           />
           <input
             type="email"
+            id="email"
             name="email"
             placeholder="Your Email"
             required
-            data-aos="fade-up"
-            data-aos-delay="200"
           />
           <textarea
+            id="message"
             name="message"
             rows="5"
             placeholder="Your Message"
             required
-            data-aos="fade-up"
-            data-aos-delay="300"
           ></textarea>
-          <button type="submit" data-aos="fade-up" data-aos-delay="400">
-            Send Message
-          </button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        <p>&copy; 2024 Pathan Aman Khan. All Rights Reserved.</p>
+        <p>&copy; 2023 Pathan Aman Khan. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://github.com/amankhandeveloper" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://twitter.com/amaandeveloper" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/amankhandeveloper"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
       </div>
     </footer>
 
+    <script src="scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       AOS.init();
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      function sendMail(event) {
-        event.preventDefault();
-        const form = document.getElementById("contactForm");
-        const name = form.elements["name"].value;
-        const email = form.elements["email"].value;
-        const message = form.elements["message"].value;
-
-        const mailtoLink = `mailto:amaan.khan.developer@gmail.com?subject=Message from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-
-        window.location.href = mailtoLink;
-      }
     </script>
   </body>
 </html>

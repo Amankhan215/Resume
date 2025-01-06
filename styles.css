@@ -19,35 +19,33 @@ body {
 header {
   background: linear-gradient(to right, #007bff, #00aaff);
   color: white;
-  padding: 5px  0;
+  padding: 15px 0;
   text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+  font-size: 1rem;
+  margin: 5px 0 0;
 }
 
 header nav ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 10px 0 0;
   display: flex;
   justify-content: center;
-}
-
-header nav ul li {
-  margin: 0 10px;
+  gap: 15px;
 }
 
 header nav ul li a {
@@ -60,19 +58,19 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Section Styles */
 section {
-  padding: 100px 0;
+  padding: 100px 0 50px;
   text-align: center;
   background: #fff;
   margin-top: 60px;
 }
 
 section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #007bff;
 }
@@ -100,6 +98,21 @@ section ul {
   margin-bottom: 20px;
 }
 
+address {
+  font-style: normal;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+address a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+address a:hover {
+  text-decoration: underline;
+}
+
 /* Skills Section */
 #skills ul {
   list-style: none;
@@ -107,13 +120,19 @@ section ul {
 }
 
 #skills ul li {
-  background: #f0f0f0;
+  background: #f9f9f9;
   margin: 10px 0;
   padding: 15px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+#skills ul li:hover {
+  background: #eef;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #skills ul li i {
@@ -124,23 +143,22 @@ section ul {
 
 /* Experience Section */
 .job {
-  background: #f0f0f0;
+  background: #f9f9f9;
   padding: 20px;
-  margin: 10px 0;
+  margin: 15px 0;
   border-radius: 5px;
   text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.job h3 {
-  font-size: 1.8rem;
-  margin: 10px 0;
-  color: #007bff;
+.job:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.job p {
-  margin: 0;
-  font-style: italic;
+.job h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #007bff;
 }
 
 .job ul {
@@ -151,12 +169,17 @@ section ul {
 
 /* Projects Section */
 .project {
-  background: #f0f0f0;
+  background: #f9f9f9;
   padding: 20px;
-  margin: 10px 0;
+  margin: 15px 0;
   border-radius: 5px;
   text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.project:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -177,11 +200,12 @@ form button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 form button:hover {
   background: #0056b3;
+  transform: scale(1.05);
 }
 
 /* Footer Styles */
@@ -189,12 +213,44 @@ footer {
   background: linear-gradient(to right, #007bff, #00aaff);
   color: white;
   text-align: center;
-  padding: 10px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-footer p {
-  margin: 0;
+footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+footer .social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  section {
+    padding: 80px 0 40px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  #skills ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer .social-links a {
+    font-size: 1.2rem;
+  }
 }
